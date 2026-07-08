@@ -1,0 +1,6 @@
+# never commit keys or release archives
+*.keys
+*.dat
+prod.keys
+*.zip
+*.nsp
