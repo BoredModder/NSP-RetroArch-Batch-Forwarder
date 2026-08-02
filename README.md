@@ -60,6 +60,16 @@ Everything the build needs (`hacbrewpack` + the forwarder template) is **bundled
 
 > Windows may show a SmartScreen warning because the app is unsigned — click **More info → Run anyway**.
 
+## ⚠️ Antivirus false positive
+
+Some antivirus products (Windows Defender, Bitdefender, and a few others) may flag this app as a virus. **It is a false positive.**
+
+The app is built with [PyInstaller](https://pyinstaller.org/), which packages Python into a Windows `.exe`. Because a lot of malware is also built this way, some antivirus engines flag *any* PyInstaller app on sight — even when it's completely safe. The detections are all generic "machine-learning"/heuristic guesses (e.g. Microsoft's `Wacatac.B!ml`), not identifications of any real threat: on [VirusTotal](https://www.virustotal.com/gui/file/32561934cf6d5b57499c24e9fc66aec53760589ee805188da373e7c34f6a9f9f) only 12 of 70 engines flag it, and every serious signature-based engine (Kaspersky, ESET, Sophos, Symantec, …) reports it clean.
+
+**This project is fully open source** — you can read every line at [NSP-Forwarder-Studio-src](https://github.com/BoredModder/NSP-Forwarder-Studio-src) and build it yourself if you prefer.
+
+If your antivirus quarantines it, you can safely restore it / add an exclusion. The false positive has also been reported to the antivirus vendors.
+
 ## Requirements
 
 - Windows 10 / 11
